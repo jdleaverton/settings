@@ -1,0 +1,60 @@
+{
+    "window.commandCenter": false,
+    "files.autoSave": "afterDelay",
+    "workbench.tree.indent": 16,
+    "editor.showFoldingControls": "always",
+    "cursor.cpp.enablePartialAccepts": true,
+    "git.autofetch": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "enabled"
+    },
+    "workbench.activityBar.orientation": "vertical",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "editor.semanticHighlighting.enabled": true,
+    "workbench.colorCustomizations": {
+        "[AnySphere Dark]": {
+            "terminal.foreground": "#c5c8c6",  // General text color
+            "terminal.background": "#1d1f21",  // Background color
+            "terminalCursor.foreground": "#c5c8c6",  // Cursor color
+            "terminalCursor.background": "#c5c8c6",  // Cursor color
+            "terminal.ansiBlack": "#1d1f21",   // Black text
+            "terminal.ansiRed": "#cc6666",     // Red text
+            "terminal.ansiGreen": "#b5bd68",   // Green text
+            "terminal.ansiYellow": "#f0c674",  // Yellow text
+            "terminal.ansiBlue": "#81a2be",    // Blue text
+            "terminal.ansiMagenta": "#b294bb", // Magenta text
+            "terminal.ansiCyan": "#8abeb7",    // Cyan text
+            "terminal.ansiWhite": "#ffffff",   // White text
+            "terminal.ansiBrightBlack": "#666666",  // Bright black (grey)
+            "terminal.ansiBrightRed": "#d54e53",    // Bright red
+            "terminal.ansiBrightGreen": "#b9ca4a",  // Bright green
+            "terminal.ansiBrightYellow": "#e7c547", // Bright yellow
+            "terminal.ansiBrightBlue": "#7aa6da",   // Bright blue
+            "terminal.ansiBrightMagenta": "#c397d8",// Bright magenta
+            "terminal.ansiBrightCyan": "#70c0b1",   // Bright cyan
+            "terminal.ansiBrightWhite": "#eaeaea"   // Bright white
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "",
+    "terminal.integrated.localEchoStyle": "dim",
+    "terminal.integrated.tabs.enabled": false,
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.editor.tabSizingFixedMinWidth": 80,
+    "go.toolsManagement.autoUpdate": true,
+    "diffEditor.renderSideBySide": true,
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "cursor.diffs.useCharacterLevelDiffs": true,
+    "cursor.cmdk.useThemedDiffBackground": true,
+    "workbench.statusBar.visible": false,
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.gpuAcceleration": "on",
+    "python.terminal.activateEnvironment": false,
+    "python.experiments.optOutFrom": [
+        "pythonTerminalEnvVarActivation"
+    ],
+    "workbench.activityBar.location": "top",
+}
+
