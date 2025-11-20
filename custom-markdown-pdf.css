@@ -1,162 +1,168 @@
 body {
-  font-family: Century Schoolbook, serif; /* Or "Times New Roman", Times, serif; or Calibri, sans-serif; */
-  font-size: 11pt; /* Common Word default size, adjust as needed (e.g., 12pt for Times New Roman) */
-  line-height: 1.15; /* Similar to Word's 'Multiple' at 1.08 or 1.15 line spacing for 'single' feel */
-                     /* For a "1.5 lines" feel, use line-height: 1.5; */
-  color: #000; /* Standard black text */
-}
-
-/* Style for IMG tags displaying SVG files */
-img[src$=".svg"] {
-  display: block !important; /* Treat as a block for centering and consistent layout */
+    font-family: Century Schoolbook, serif; /* Or "Times New Roman", Times, serif; or Calibri, sans-serif; */
+    font-size: 11pt; /* Common Word default size, adjust as needed (e.g., 12pt for Times New Roman) */
+    line-height: 1.15; /* Similar to Word's 'Multiple' at 1.08 or 1.15 line spacing for 'single' feel */
+                       /* For a "1.5 lines" feel, use line-height: 1.5; */
+    color: #000; /* Standard black text */
+  }
   
-  /* Primary constraint: max-height */
-  max-height: 18cm !important; /* Approximately 3/4 of a common page height. Adjust as needed. */
+  /* Style for IMG tags displaying SVG files */
+  img[src$=".svg"] {
+    display: block !important; /* Treat as a block for centering and consistent layout */
+    
+    /* Primary constraint: max-height */
+    max-height: 18cm !important; /* Approximately 3/4 of a common page height. Adjust as needed. */
+    
+    /* Ensure width scales to maintain aspect ratio when height is constrained */
+    width: auto !important;    
+    
+    /* Fallback/additional constraint for width, though 'width: auto' should mostly handle it with max-height */
+    /* max-width: 100% !important; */ /* Ensures it doesn't overflow its container horizontally */
   
-  /* Ensure width scales to maintain aspect ratio when height is constrained */
-  width: auto !important;    
+    /* Centering styles */
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
-  /* Fallback/additional constraint for width, though 'width: auto' should mostly handle it with max-height */
-  /* max-width: 100% !important; */ /* Ensures it doesn't overflow its container horizontally */
+  /* Paragraphs: Justified, space after */
+  p {
+    text-align: justify;
+    text-justify: inter-word; /* Helps with justification quality */
+    margin-top: 0;
+    margin-bottom: 8pt; /* Common 'space after paragraph' in Word */
+  }
+  
+  
+  /* Headings: Word-like styling */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    text-align: left; /* Headings usually left-aligned */
+    line-height: 1.2; /* Slightly tighter line height for headings */
+    color: #000; /* Or a dark blue often used for Word headings */
+  }
+  
+  h1 {
+    font-size: 16pt;
+    margin-top: 24pt; /* Space before */
+    margin-bottom: 6pt;  /* Space after */
+  }
+  
+  h2 {
+    font-size: 14pt; /* Adjusted for better hierarchy */
+    margin-top: 18pt;
+    margin-bottom: 4pt;
+  }
+  
+  h3 {
+    font-size: 12pt;
+    font-weight: bold; /* Ensure H3 is distinct */
+    margin-top: 14pt;
+    margin-bottom: 4pt;
+  }
+  
+  h4 {
+    font-size: 11pt;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 2pt;
+  }
+  
+  h5 {
+    font-size: 10pt;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 2pt;
+  }
+  
+  h6 {
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 8pt;
+    margin-bottom: 2pt;
+  }
+  
+  /* Lists: Indentation and spacing */
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 8pt; /* Consistent with paragraph spacing */
+    padding-left: 1cm; /* Indent the list relative to the margin */
+  }
 
-  /* Centering styles */
-  margin-top: 8pt;
-  margin-bottom: 8pt;
-  margin-left: auto;
-  margin-right: auto;
-}
+  li {
+    margin-bottom: 4pt; /* Space between list items */
+  }
 
-/* Paragraphs: Justified, space after */
-p {
-  text-align: justify;
-  text-justify: inter-word; /* Helps with justification quality */
-  margin-top: 0;
-  margin-bottom: 8pt; /* Common 'space after paragraph' in Word */
-}
-
-
-/* Headings: Word-like styling */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  text-align: left; /* Headings usually left-aligned */
-  line-height: 1.2; /* Slightly tighter line height for headings */
-  color: #000; /* Or a dark blue often used for Word headings */
-}
-
-h1 {
-  font-size: 16pt;
-  margin-top: 24pt; /* Space before */
-  margin-bottom: 6pt;  /* Space after */
-}
-
-h2 {
-  font-size: 14pt; /* Adjusted for better hierarchy */
-  margin-top: 18pt;
-  margin-bottom: 4pt;
-}
-
-h3 {
-  font-size: 12pt;
-  font-weight: bold; /* Ensure H3 is distinct */
-  margin-top: 14pt;
-  margin-bottom: 4pt;
-}
-
-h4 {
-  font-size: 11pt;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 12pt;
-  margin-bottom: 2pt;
-}
-
-h5 {
-  font-size: 10pt;
-  font-weight: bold;
-  margin-top: 10pt;
-  margin-bottom: 2pt;
-}
-
-h6 {
-  font-size: 9pt;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 8pt;
-  margin-bottom: 2pt;
-}
-
-/* Lists: Indentation and spacing */
-ul, ol {
-  margin-top: 0;
-  margin-bottom: 8pt; /* Consistent with paragraph spacing */
-  padding-left: 1cm; /* Indent the list relative to the margin */
-}
-
-li {
-  margin-bottom: 4pt; /* Space between list items */
-}
-
-/* Remove first-line indent from paragraphs within list items if they get it from the general 'p' rule */
-li p {
-  text-indent: 0;
-  margin-bottom: 4pt; /* Or 0 if li margin-bottom is sufficient */
-}
-
-/* Blockquotes: Indented, italic */
-blockquote {
-  margin-top: 0;
-  margin-bottom: 8pt;
-  margin-left: 1.27cm;  /* Indent from left */
-  margin-right: 1.27cm; /* Indent from right */
-  padding-left: 0.5cm;
-  padding-right: 0.5cm;
-  font-style: italic;
-  border-left: none; /* Word doesn't usually have a border on blockquotes by default */
-}
-
-blockquote p {
-  text-indent: 0; /* No first-line indent for paragraphs in blockquotes */
-  text-align: justify; /* Justify text inside blockquotes as well */
-}
-
-/* Code Blocks: Monospace font, background, padding */
-pre {
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 9pt;
-  background-color: #f7f7f7; /* Light grey background, common for code */
-  border: 1px solid #e0e0e0;
-  padding: 0.75em;
-  margin-top: 0;
-  margin-bottom: 8pt;
-  overflow-x: auto; /* Allow horizontal scroll for long lines */
-  line-height: 1.3; /* Tighter line height for code */
-  text-align: left; /* Code is typically left-aligned */
-}
-
-/* Tables: Basic Word-like styling, centered */
-table {
-  width: auto; /* Let table size to content */
-  border-collapse: collapse;
-  margin-top: 0;
-  margin-bottom: 8pt;
-  margin-left: auto; /* Center the table */
-  margin-right: auto; /* Center the table */
-  font-size: 10pt; /* Slightly smaller for table text */
-}
-
-/* Apply tabular numbers for consistent digit width, especially useful in tables */
-table, pre /* You might want tabular numbers in code blocks too */ {
-  font-variant-numeric: tabular-nums;
-}
-
-th, td {
-  border: 1px solid #767676; /* Medium grey borders, similar to Word's default grid */
-  padding: 4pt 6pt;
-  text-align: left;
-  vertical-align: top;
-}
-
-th {
-  font-weight: bold;
-  background-color: #f0f0f0; /* Light grey for header row */
-}
+  /* Nested lists (tier 2 bullets): Add space above them */
+  li > ul,
+  li > ol {
+    margin-top: 6pt; /* Add space between tier 1 item and tier 2 bullets */
+  }
+  
+  /* Remove first-line indent from paragraphs within list items if they get it from the general 'p' rule */
+  li p {
+    text-indent: 0;
+    margin-bottom: 4pt; /* Or 0 if li margin-bottom is sufficient */
+  }
+  
+  /* Blockquotes: Indented, italic */
+  blockquote {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    margin-left: 1.27cm;  /* Indent from left */
+    margin-right: 1.27cm; /* Indent from right */
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    font-style: italic;
+    border-left: none; /* Word doesn't usually have a border on blockquotes by default */
+  }
+  
+  blockquote p {
+    text-indent: 0; /* No first-line indent for paragraphs in blockquotes */
+    text-align: justify; /* Justify text inside blockquotes as well */
+  }
+  
+  /* Code Blocks: Monospace font, background, padding */
+  pre {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 9pt;
+    background-color: #f7f7f7; /* Light grey background, common for code */
+    border: 1px solid #e0e0e0;
+    padding: 0.75em;
+    margin-top: 0;
+    margin-bottom: 8pt;
+    overflow-x: auto; /* Allow horizontal scroll for long lines */
+    line-height: 1.3; /* Tighter line height for code */
+    text-align: left; /* Code is typically left-aligned */
+  }
+  
+  /* Tables: Basic Word-like styling, centered */
+  table {
+    width: auto; /* Let table size to content */
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 8pt;
+    margin-left: auto; /* Center the table */
+    margin-right: auto; /* Center the table */
+    font-size: 10pt; /* Slightly smaller for table text */
+  }
+  
+  /* Apply tabular numbers for consistent digit width, especially useful in tables */
+  table, pre /* You might want tabular numbers in code blocks too */ {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  th, td {
+    border: 1px solid #767676; /* Medium grey borders, similar to Word's default grid */
+    padding: 4pt 6pt;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  th {
+    font-weight: bold;
+    background-color: #f0f0f0; /* Light grey for header row */
+  }
