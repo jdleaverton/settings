@@ -1,0 +1,58 @@
+# ~/.config/starship.toml
+add_newline = false
+continuation_prompt = ""
+command_timeout = 2000
+
+# Two-line prompt with curved box-drawing borders and semicircle pills
+format = """
+╭─[](fg:#7dcfff)[$directory](fg:#1a1b26 bg:#7dcfff)[](fg:#7dcfff) \
+[](fg:#bb9af7)[$git_branch $custom $git_metrics](fg:#1a1b26 bg:#bb9af7)[](fg:#bb9af7)
+╰─$character
+"""
+right_format = ""
+
+[directory]
+format = "$path"
+style = "fg:#1a1b26 bg:#7dcfff"
+truncate_to_repo = false
+truncation_length = 0
+use_os_path_sep = true
+home_symbol = "~"
+
+[git_branch]
+symbol = ""
+format = "$symbol $branch"
+style = "fg:#1a1b26 bg:#bb9af7"
+
+# Total uncommitted files (untracked + modified/staged)
+[custom.git_dirty]
+shell  = ["sh"]
+when   = "git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+command = 'c=$(git status --porcelain 2>/dev/null | wc -l | tr -d " "); (( c > 0 )) && echo $c'
+format = " $output"
+style  = "fg:#1a1b26 bg:#bb9af7"
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+format = "+$added/-$deleted"
+added_style = "fg:#1a1b26 bg:#bb9af7"
+deleted_style = "fg:#1a1b26 bg:#bb9af7"
+
+[git_status]
+disabled = true
+
+[character]
+success_symbol = "[➜](bold white)"
+error_symbol   = "[➜](bold white)"
+
+# Disable status modules - handled by .zshrc
+[status]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[time] 
+disabled = true
+
